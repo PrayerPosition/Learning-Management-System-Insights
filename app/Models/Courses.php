@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Courses extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes,InteractsWithMedia;
 
     protected $fillable = [
         'name',
