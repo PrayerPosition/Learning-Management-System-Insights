@@ -21,7 +21,8 @@ class CoursesTable
                 TextColumn::make('difficulty')
                 ->badge()
                 ->formatStateUsing(fn ($state) => CourseDifficulty::from($state)->label())
-                ->color(fn ($state) => CourseDifficulty::from($state)->color()),
+                ->color(fn ($state) => CourseDifficulty::from($state)->color())
+                ->icon(fn ($state) => CourseDifficulty::from($state)->getIcon()),
 
                 TextColumn::make('duration_hours')->label('Duration (hours)'),
                 TextColumn::make('lessons_count')->label('Lessons'),

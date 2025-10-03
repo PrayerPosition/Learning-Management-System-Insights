@@ -30,6 +30,14 @@ enum CourseDifficulty: string
         };
     }
 
+    public function getIcon(): ?string
+    {
+        return match($this) {
+            self::Easy => 'heroicon-c-fire',
+            self::Intermediate => 'heroicon-c-fire',
+            self::Hard => 'heroicon-c-fire',
+        };
+    }   
     
     
 }
