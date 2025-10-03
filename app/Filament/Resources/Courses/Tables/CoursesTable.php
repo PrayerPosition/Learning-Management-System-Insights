@@ -7,6 +7,8 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
+use App\Enums\CourseDifficulty;
+use Filament\Tables\Columns\BadgeColumn;
 
 class CoursesTable
 {
@@ -16,7 +18,12 @@ class CoursesTable
             ->columns([
                 TextColumn::make('name')->searchable()->sortable(),
                 TextColumn::make('description')->limit(50),
-                TextColumn::make('difficulty')->label('Difficulty'),
+
+                TextColumn::make('difficulty')
+                ->badge()
+                ->formatStateUsing(fn ($state) => CourseDifficulty::from($state)->label())
+                ->color(fn ($state) => CourseDifficulty::from($state)->color()),
+
                 TextColumn::make('duration_hours')->label('Duration (hours)'),
                 TextColumn::make('lessons_count')->label('Lessons'),
                 TextColumn::make('created_at')->dateTime(),
