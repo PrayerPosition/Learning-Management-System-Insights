@@ -1,6 +1,6 @@
 <?php
 
-rreturn [
+return [
     'difficulty' => [
         'easy' => 'Лёгкий',
         'intermediate' => 'Средний',

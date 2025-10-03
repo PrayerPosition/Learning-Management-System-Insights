@@ -3,8 +3,10 @@
 namespace App\Enums;
 use Filament\Tables\Enums\EnumColumn;
 use Filament\Forms\Components\Select;
+use Filament\Support\Contracts\HasColor;
+use Filament\Support\Contracts\HasLabel;
 
-enum CourseDifficulty: string
+enum CourseDifficulty: string 
 {
     case Easy = 'easy';
     case Intermediate = 'intermediate';
@@ -29,13 +31,5 @@ enum CourseDifficulty: string
     }
 
     
-    public function icon(): ?string
-    {
-        return match($this) {
-            self::Easy => 'heroicon-o-smile',
-            self::Intermediate => 'heroicon-o-meh',
-            self::Hard => 'heroicon-o-frown',
-        };
-    }
     
 }

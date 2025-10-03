@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
 
         LanguageSwitch::configureUsing(function (LanguageSwitch $switch) {
             $switch
-                ->locales(['en','ka']); 
+                ->locales(['en','ka','ru']); 
         });
     }
 }

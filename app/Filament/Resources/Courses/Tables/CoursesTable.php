@@ -8,7 +8,6 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use App\Enums\CourseDifficulty;
-use Filament\Tables\Columns\BadgeColumn;
 
 class CoursesTable
 {
