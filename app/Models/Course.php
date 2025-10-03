@@ -24,7 +24,7 @@ class Course extends Model implements HasMedia
         return $this->hasMany(Lesson::class)->orderBy('order');
     }
 
-    protected static function booted()
+    protected static function booted(): void
     {
         static::saved(function ($course) {
             $course->updateQuietly(['lessons_count' => $course->lessons()->count()]);
