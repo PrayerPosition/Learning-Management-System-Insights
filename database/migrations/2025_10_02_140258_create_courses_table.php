@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); 
+            $table->string('name');
             $table->text('description')->nullable();
             $table->integer('duration_hours')->default(0);
             $table->enum('difficulty', ['easy', 'intermediate', 'hard'])->default('easy');
-            $table->unsignedInteger('lessons_count')->default(0); 
+            $table->unsignedInteger('lessons_count')->default(0);
             $table->timestamps();
         });
     }
