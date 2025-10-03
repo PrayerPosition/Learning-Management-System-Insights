@@ -19,7 +19,7 @@ class Course extends Model implements HasMedia
         'lessons_count',
     ];
 
-    public function lessons()
+    public function lessons(): HasMany
     {
         return $this->hasMany(Lesson::class)->orderBy('order');
     }

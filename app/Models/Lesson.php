@@ -20,7 +20,7 @@ class Lesson extends Model implements HasMedia
         'order',
     ];
 
-    public function course()
+    public function course(): BelongsTo
     {
         return $this->belongsTo(Course::class);
     }

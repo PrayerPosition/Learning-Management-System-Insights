@@ -20,7 +20,7 @@ class CourseFactory extends Factory
         ];
     }
 
-    public function configure()
+    public function configure(): static
     {
         return $this->afterCreating(function (Course $course) {
             $course->update([
