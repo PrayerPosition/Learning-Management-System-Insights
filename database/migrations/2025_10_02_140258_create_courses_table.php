@@ -13,16 +13,12 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name'); 
             $table->text('description')->nullable();
-            $table->string('image')->nullable();
-            $table->string('slug')->unique();
-            $table->boolean('is_published')->default(false);
-            $table->decimal('price', 10, 2)->nullable();
-            $table->integer('duration_hours')->nullable();
-            $table->enum('level', ['beginner', 'intermediate', 'advanced'])->default('beginner');
+            $table->integer('duration_hours')->default(0);
+            $table->enum('difficulty', ['easy', 'intermediate', 'hard'])->default('easy');
+            $table->unsignedInteger('lessons_count')->default(0); 
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
